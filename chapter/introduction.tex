@@ -1,0 +1,104 @@
+	\begin{frame}[plain,c]
+		\begin{center}
+			\huge Introduction
+		\end{center}
+	\end{frame}
+
+
+	\begin{frame}
+		\frametitle{Outline}
+		\begin{itemize}
+			\item Challenge on \textit{combinatorial design}%nato dalla mate ricreativa
+			\item What is it?:
+			\begin{itemize}
+				\item existence or non-existence
+				\item representation
+				\item construction
+			\end{itemize}
+		\end{itemize}
+	\end{frame}
+
+	%definizione di sts
+	%meglio formalismo e da qui si vede il combinatorio e la definizione operativa
+	%attenzione che sono insiemi (il codominio è indistinguile (forse))
+	
+	\begin{frame}
+		\frametitle{What is Steiner Triple System }
+		\begin{block}{(Definition) Steiner Triple Systems (STS)}
+			is an ordered pair $(S,T)$ (a \textit{design}) where $S$ is a finite set of \textit{point}/\textit{symbol} and $T$ is a set of subsets of 3-symbol in which all possible pair of $S$ are contained \textbf{once and only once}.\\
+			 
+		\end{block}
+	
+	\pause
+	
+	
+	More formally:\\
+	\begin{itemize}
+		\item define $S$ such that $|S|=v$
+		\item 	then $T = \{ \forall \{a,b,c\} \in S\times S \times S\}$\\
+		 such that $\forall a,b \in S \times S \ a \not = b  \quad \sum_{ \forall \{x,y,z\} \in T} (\mathbb{I}_{ \{ a,b \} \in \{x,y\} \wedge \{y,z\} \wedge \{z,x\} }) = 1 $
+	\end{itemize}
+	More compact way to define STS by define the \textit{order} $v$ of STS by $v = |S|$
+	\end{frame}
+
+	%possiamo parlare di famiglia parlando di STS(v)
+	
+	
+	%vediamo qualche esempio
+	
+	\begin{frame}
+		\frametitle{Examples of STS}
+		\begin{center}
+			$S=\{a\}, T= \emptyset$\\
+			$S=\{a,b\}, T= \emptyset$\\
+			$S=\{a,b,c\}, T= \{ \{a,b,c\} \}$\\
+			$S=\{a,b,c,d\}, T=\emptyset$\\
+			$S=\{a,b,c,d,e\}, T= \emptyset$\\
+			$S=\{a,b,c,d,e,f\}, T= \emptyset$\\
+			$S=\{a,b,c,d,e,f,g\}, T= \{ \{a,b,c\},\{c,d,e\},\{e,f,a\},\{f,b,d\},\{a,g,d\},\{e,g,b\},\{c,g,f\} \}$\\
+			...
+		\end{center}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Balanced incomplete blocks design}
+		\begin{block}{(Definition) $(v,k,\lambda)-\mathrm{BIBD}$}
+			$v$,$k$ and $\lambda$ be positive integers such that $v > k \ge 2$. A balanced incomplete block design is a \textit{design} $(S,T)$ such that satisfy these properties:
+			\begin{enumerate}
+				\item $|S|=v$
+				\item $\forall t \in T\quad |t|= k $
+				\item for all distinct pairs are contained in exactly $\lambda$ blocks ($t$) 
+			\end{enumerate}
+		\end{block}
+	
+
+		Why \textbf{balanced} and \textbf{incomplete}?\\
+		\begin{description}[l]
+			\item[balanced] they share the same property (2)
+			\item[incomplete] by reason of $v=|S|\quad > \quad k=|t| \  \forall t \in T$
+		\end{description}
+
+	\end{frame}
+
+	\begin{frame}
+	\frametitle{What is Steiner Triple System 2}
+	
+	$\lambda$ blocks ($t$) of $(v,k,\lambda)-\mathrm{BIBD}$ iff \textcolor{red}{$\lambda = 1$, $k=3$}.
+	
+	\begin{block}{$(v,k,\lambda)-\mathrm{BIBD}$}
+		$v$,$k$ and $\lambda$ be positive integers such that $v > k \ge 2$. A balanced incomplete block design is a \textit{design} $(S,T)$ such that satisfy these properties:
+		\begin{enumerate}
+			\item $|S|=v$
+			\item $\forall t \in T\quad |t|= k $
+			\item $\forall s \in S$ is contained in exactly $\lambda$ blocks ($t$) 
+		\end{enumerate}
+	\end{block}
+
+	Requirement \textbf{1} satisfied by definition of STS on the design $(S,T)$.\\
+	Requirement \textbf{2} satisfied by definition of STS.\\	 
+	Requirement \textbf{3} for all distinct pairs are contained in exactly \\
+	\pause
+	%I'm not sure 10000000% 
+	\textcolor{red}{All theory from BIBD is shared too in STS}
+	
+	\end{frame}

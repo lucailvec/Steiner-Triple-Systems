@@ -8,7 +8,7 @@
 
 %bibliography
 \usepackage{biblatex}
-\bibliography{bibliography}
+\addbibresource{bib.bib}
 
 \title{Steiner Triple Systems}
 \subtitle{Existence,representation and construction}
@@ -22,41 +22,40 @@
 	\titlepage
 	\end{frame}
 	
+	\include{chapter/introduction}
+	
+	\include{chapter/representation}
+	
+	\include{chapter/building_methods}
+	
+	\include{chapter/practical_example}
+
 	\begin{frame}
-		\frametitle{Outline}
-		\begin{itemize}
-			\item What is it? 
-			\item Challenge on \textit{combinatorial design}:
-			\begin{itemize}
-				\item existence
-				\item representation
-				\item construction
-			\end{itemize}
-		\end{itemize}
+	\frametitle{Cyclic Steiner triple system}
 	\end{frame}
 
-	%definizione di sts
-	%meglio formalismo e da qui si vede il combinatorio e la definizione operativa
-	%attenzione che sono insiemi (il codominio è indistinguile (forse))
-	
 	\begin{frame}
-		\frametitle{What is Steiner Triple Systems }
-		We are in combinatorial design...
-		\begin{block}{Steiner Triple Systems (STS)}
-			is an ordered pair $(S,T)$ where $S$ is a finite set of \textit{point}/\textit{symbol} and $T$ is a set of subsets of 3-symbol in which all possible pair of $S$ are contained \textbf{once and only once}.\\
-			 
-		\end{block}
-	
-	\pause
-	More formally:\\
-	\begin{itemize}
-		\item define $S$ such that $|S|=v$
-		\item 	then $T = \{ \{a,b,c\} \subseteq S\times S \times S\}$\\
-		 such that $\forall a,b \in S \times S\quad \sum_{\{x,y,z\} \in T} (\mathbb{I}_{ \{ a,b \} \in \{ (x,y), (x,z) , (y,z)  \} }) = 1 $
-	\end{itemize}
-	More compact way to define STS by define the \textit{order} $v$ of STS by $v = |S|$
+	\frametitle{STS $\Rightarrow$ Idempotent totally symmetric quasigroup construction}
+	%pag 73
 	\end{frame}
 
+	\begin{frame}
+	\frametitle{Kirkamn triple systems}
+	%pag 95
+	\end{frame}
+
+
+	\begin{frame}
+	\frametitle{Intersections of Steiner Triple Systems}
+	Teirlink's Algorithm %pag 169
+	\end{frame}
+	\begin{frame}
+	\frametitle{Embedding partial of Steiner Triple Systems}
+	Teirlink's Algorithm %pag 169
+	\end{frame}
+%how to construct 
+%rotation of 1-left incidence triangle
+%3 mod 6 1 mod 6 
 \begin{comment}
 
 	\begin{frame}
@@ -98,8 +97,9 @@
 	
 	\end{comment}
 	
-	\begin{frame}
-		\frametitle{Bibliography}
-		\printbibliography
+	\begin{frame}[t,allowframebreaks]
+	\frametitle{References}
+	\printbibliography
 	\end{frame}
+
 \end{document}
