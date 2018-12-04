@@ -21,7 +21,7 @@
 	%definizione di sts
 	%meglio formalismo e da qui si vede il combinatorio e la definizione operativa
 	%attenzione che sono insiemi (il codominio è indistinguile (forse))
-	
+	%Steiner triple systems were apparently defined for the first time by W. S. B. Wool-house [35] (Prize question 1733, Lady’s and Gentlemens’ Diary, 1844)
 	\begin{frame}
 		\frametitle{What is Steiner Triple System }
 		\begin{block}{(Definition) Steiner Triple Systems (STS)}
@@ -31,12 +31,12 @@
 	
 	\pause
 	
-	
+	%pensiamo al bruteforce e vediamo che complessità abbiamo
 	More formally:\\
 	\begin{itemize}
 		\item define $S$ such that $|S|=v$
 		\item 	then $T = \{ \forall \{a,b,c\} \in S\times S \times S\}$\\
-		 such that $\forall a,b \in S \times S \ a \not = b  \quad \sum_{ \forall \{x,y,z\} \in T} (\mathbb{I}_{ \{ a,b \} \in \{x,y\} \wedge \{y,z\} \wedge \{z,x\} }) = 1 $
+		 such that $\forall a,b \in S \times S \ a \not = b  \quad \sum_{ \forall \{x,y,z\} \in T} (\mathbb{I}_{ \{ a,b \} \in \{x,y\} }  + \mathbb{I}_{ \{ a,b \} \in \{y,z\} } +\mathbb{I}_{ \{ a,b \} \in \{z,x\}  }) = 1 $
 	\end{itemize}
 	More compact way to define STS by define the \textit{order} $v$ of STS by $v = |S|$
 	\end{frame}
@@ -45,7 +45,9 @@
 	
 	
 	%vediamo qualche esempio
-	
+	%prima cosa: devo avere T formato da triplette di elementi distinti, quindi ordine 1 2 non esiste sts.
+	%per il 4 5 6 è qualcosa di intrinseco, non si vede dai numeri a colpo d'occhio
+	%per il 4 è semplice coonteggiare e creare le coppie di elementi distinti (6). Si pensa quindi di facilmente creare 2 set da 3 elementi ma se si prova ci si accorge che o abbiamo un set da 4 elementi distinti e uno da 3 oppure dobbiamo ripetere alcune coppie per ottenere un gruppo da  3 (ma non valido perchè vengono ripetute le coppie)
 	\begin{frame}
 		\frametitle{Examples of STS}
 		\begin{center}
@@ -93,12 +95,50 @@
 			\item $\forall s \in S$ is contained in exactly $\lambda$ blocks ($t$) 
 		\end{enumerate}
 	\end{block}
-
-	Requirement \textbf{1} satisfied by definition of STS on the design $(S,T)$.\\
-	Requirement \textbf{2} satisfied by definition of STS.\\	 
-	Requirement \textbf{3} for all distinct pairs are contained in exactly \\
 	\pause
 	%I'm not sure 10000000% 
 	\textcolor{red}{All theory from BIBD is shared too in STS}
 	
+	%ma qual'è la relazione tra essi ?
+	% If a (v, k, λ)-BIBD exists, then λ(v − 1) ≡ 0 (mod k − 1) and
+%	λv(v − 1) ≡ 0 (mod k(k − 1))  non riusciamo ad avere qualcosa di più forte ? 
 	\end{frame}
+
+
+%existence theorem iff v= 1, 3 mod 6
+\begin{frame}
+	\frametitle{Existence proof}
+	\begin{theorem}
+		A STS of \textit{order} $v$ \textbf{exists} if and only if $v\equiv 1,3\ mod(6)$  
+	\end{theorem}
+	\begin{proof}
+		($\Rightarrow$)We know that all possible pairs are $\binom{v}{2}$, and by definition these pairs are partitioned (non-overlapping and union make all) into 3-element groups. Thoose groups are $|T|=\frac{\binom{v}{2}}{3}=\frac{v(v-1)}{6}$. Then for $\forall x \in S$ can be defined $T(x) = \{ t\not\{x\} | \textcolor{red}{x \in t} \in T \}$. So if an $x \in S$ is fixed and then for every set $t$ which contain $x$ we remove the point $x$ then we carry out $v-1$ point partitioned in \textit{2-element} set. As we can't make 2-element partition from a group of \textit{odd} element, $v-1$ is \textit{even}! So $v$ is \textit{odd} and it's equal to say $v \equiv 1,3,5 mod(6)$. The $\frac{v(v-1)}{6}$ is not an integer for every $v \equiv 5 mod(6)$. As a result STS $\Rightarrow$ $v\equiv 1,3\ mod(6)$
+	\end{proof}
+\end{frame}
+
+\begin{frame}
+\frametitle{Existence proof 2}
+\begin{block}{$(S,T)\ : |S|=v\ \wedge v\equiv 1,3\ mod(6) \Rightarrow STS(v)$}
+	In addition we suppose:
+	\begin{itemize}
+		\item each dinstict pair of $S$ belongs to \textit{at least} one triple in $T$
+		\item $|T| \le \frac{v(v-1)}{6}$
+	\end{itemize}
+\end{block}
+\begin{proof}
+	(Absurd) Assume the contrary and make a list $L$ as follows: for every pair write down the triple with which it is associated. Then $|L|> \binom{v}{2}$ as there exists a pair with towo triples. Now since each triple is counted by exactly three pairs so $|T| =|L|/3 > \frac{\binom{v}{2}}{3}$, a contradiction.
+\end{proof}
+
+%oppure
+\begin{proof}
+	For each distinct pair of $S$ belongs to at least one triple and if the number of triples is less than or equal to the right number of triples, then each pair of sumbols in $S$ belongs to exactly one triple in $T$.
+\end{proof}
+\end{frame}
+
+\begin{frame}
+	\begin{center}
+		\begin{block}{Corollary}
+			A STS of \textit{order} $v$ has $|T|=\frac{v(v-1)}{6}$	
+		\end{block}
+	\end{center}
+\end{frame}

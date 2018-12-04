@@ -1,7 +1,12 @@
+\begin{frame}[plain,c]
+\begin{center}
+	\huge Construction methods
+\end{center}
+\end{frame}
+
 \begin{frame}
 	\frametitle{How to create}
 	\begin{itemize}
-		\item rotation of 1-left incidence triangle
 		\item Bose method
 		\item Skolem
 		\item $6n + 5$
@@ -11,5 +16,275 @@
 		\item $2n +7$
 		\item Even-Odd
 	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Bose construction}
+	We need first define:\\
+	\textbf{idempotent commutative quasigroups of order $2n + 1$}
+\end{frame}
+
+%esprimiamo vari risultati che non sono inclusi in tutti i libri in quanto alcuni li danno per scontati 
+\begin{frame}
+	\frametitle{But first: recap}
+	\begin{columns}
+		\column{0.4\textwidth}
+		\begin{block}{(Definition) latin square of order $n$}
+			is an $n \times n$ array where each row and column contains all symbols $\{1,...,n\}$ exactly one time.
+		\end{block}
+	\begin{table}[]
+		\begin{tabular}{cccll}
+			\cline{1-3}
+			\multicolumn{1}{|c|}{1} & \multicolumn{1}{c|}{3} & \multicolumn{1}{c|}{2} &  &  \\ \cline{1-3}
+			\multicolumn{1}{|c|}{2} & \multicolumn{1}{c|}{1} & \multicolumn{1}{c|}{3} &  &  \\ \cline{1-3}
+			\multicolumn{1}{|c|}{3} & \multicolumn{1}{c|}{2} & \multicolumn{1}{c|}{1} &  &  \\ \cline{1-3}
+			\multicolumn{1}{l}{}    & \multicolumn{1}{l}{}   & \multicolumn{1}{l}{}   &  & 
+		\end{tabular}
+	\caption{Latin square of order $3$}
+	\end{table}
 	
-	\end{frame}
+		\column{0.4\textwidth}
+		\begin{block}{(Definition) Quasigroup}
+		A \textit{quasigroup} of \textit{order} $n$ is an algebric structure, a pair $(Q,\circ)$ where $|Q|=n$ and $\circ : Q \times Q \rightarrow Q$.\\ $\forall a,b \in Q$ then $\exists! x,y$ (unique!) to the equations $a \circ x = b$ and $x \circ a = b$. 
+		\end{block}
+
+		An examples of quasigroup are $(\mathrm{Z_n},-)$,$(\mathrm{Z_n},+)$.
+	\end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{Quasigroup and latin square}
+%Theorem The multiplication table of a quasigroup is a  Latin square.
+
+\begin{theorem}
+	The multiplication table of a quasigroup is a  Latin square
+\end{theorem}
+A quasigroup $(G,\circ)$ is a latin square of order $v=|G|$:
+
+	
+	\begin{columns}
+		\column{0.5\textwidth}
+		\begin{table}[]
+			\begin{tabular}{ccccc}
+				\cline{1-3}
+				\multicolumn{1}{|c|}{1} & \multicolumn{1}{c|}{3} & \multicolumn{1}{c|}{2} &  &  \\ \cline{1-3}
+				\multicolumn{1}{|c|}{2} & \multicolumn{1}{c|}{1} & \multicolumn{1}{c|}{3} &  &  \\ \cline{1-3}
+				\multicolumn{1}{|c|}{3} & \multicolumn{1}{c|}{2} & \multicolumn{1}{c|}{1} &  &  \\ \cline{1-3}
+				\multicolumn{1}{l}{}    & \multicolumn{1}{l}{}   & \multicolumn{1}{l}{}   &  & 
+			\end{tabular}
+			\caption{Latin square of order $3$}
+		\end{table}
+		\column{0.5\textwidth}
+		\begin{table}[]
+			\begin{tabular}{ccccc}
+				%\hline
+				$\circ$				   & \multicolumn{1}{|c|}{1} & \multicolumn{1}{c|}{2} & \multicolumn{1}{c|}{3}  \\ \hline
+				\multicolumn{1}{c|}{1} & \multicolumn{1}{c|}{1} & \multicolumn{1}{c|}{2} & \multicolumn{1}{c|}{3}  \\ \hline
+				\multicolumn{1}{c|}{2} & \multicolumn{1}{c|}{3} & \multicolumn{1}{c|}{1} & \multicolumn{1}{c|}{2}  \\ \hline
+				\multicolumn{1}{c|}{3} & \multicolumn{1}{c|}{2} & \multicolumn{1}{c|}{3} & \multicolumn{1}{c|}{1}  \\ \hline
+			\end{tabular}
+			\caption{Quasigroup of order $3$}
+		\end{table}
+	\end{columns}
+	\pause
+	A $(Q,\circ)$ is said:
+	\begin{description}%una relazione d'ordine su G
+		\item[idempotent] $\forall i : 1 \le i \le |G|$ the cell $(i,i)$ contains $\alpha$ such that $\alpha \le i$
+		\item[commutative] $\forall i,j : 1 \le i<j \le |G|$ the cell $(i,j)$ contains the same of $(j,i)$
+	\end{description}
+
+\end{frame}
+
+
+% esporre le proprietà commutativa e idempotente sull'esempio
+\begin{frame}
+\frametitle{Commutative idempotent latin square}
+\begin{center}
+	\begin{table}[]
+		\begin{tabular}{|c|c|c|}
+			\hline
+			1 & 3 & 2 \\ \hline
+			3 & 2 & 1 \\ \hline
+			2 & 1 & 3 \\ \hline
+		\end{tabular}
+	\caption{C. I. latin square of order $3$}
+	\end{table}
+\end{center}
+\pause
+%proviamo a pensare in modo naive ? 
+\textcolor{red}{How can we create a \textit{C.I. latinsquare/quasigroup of order v} ?}
+\end{frame}
+
+\begin{frame}
+\frametitle{contenuto...}
+\begin{theorem}%l'idea è quella di non poter scaricare il carico in modo simmetrico o di rispettare la prop principale del latin square
+	idempotent commutative quasigroups exist \textbf{if and only if} they have \textit{odd} order.
+\end{theorem}
+
+Great! We look at the half of all possible
+\end{frame}
+
+\begin{frame}
+\frametitle{Construction method of CI quasigroup}
+\begin{enumerate}
+	\item Let $v$ be the order of quasigroup, take $(Z_v,+)$ where $+$ is the addition in $Z_v$.
+	\item For all element $i := i +1$
+	\item Take the elements of main diagonal $<d_1,...,d_v>$. Build a permutation $\sigma_v = \{(d_1,1), (d_2,2),..., (d_v,v)\}$.
+	\item Apply $\sigma_v$ for all element of the \textit{multiplication table}
+\end{enumerate}
+As result you have a CI quasigroup.
+\end{frame}
+
+%a formal method, because a permutation of a correct row perform a correct row too. A left rotation $v$ times give you $v$ different element. So a bijective trasformation doesn't change this property.
+\begin{frame}
+\frametitle{Construction method of CI quasigroup of order 7}
+\begin{columns}
+	
+	\column{0.5\textwidth}
+	\begin{table}[]
+		\begin{tabular}{llllllll}
+			$Z_7$,+                 & 0                      & 1                      & 2                      & 3                      & 4                      & 5                      & 6                      \\ \cline{2-8} 
+			\multicolumn{1}{l|}{0} & \multicolumn{1}{l|}{0} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{3} & \multicolumn{1}{l|}{4} & \multicolumn{1}{l|}{5} & \multicolumn{1}{l|}{6} \\ \cline{2-8} 
+			\multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{3} & \multicolumn{1}{l|}{4} & \multicolumn{1}{l|}{5} & \multicolumn{1}{l|}{6} & \multicolumn{1}{l|}{0} \\ \cline{2-8} 
+			\multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{3} & \multicolumn{1}{l|}{4} & \multicolumn{1}{l|}{5} & \multicolumn{1}{l|}{6} & \multicolumn{1}{l|}{0} & \multicolumn{1}{l|}{1} \\ \cline{2-8} 
+			\multicolumn{1}{l|}{3} & \multicolumn{1}{l|}{3} & \multicolumn{1}{l|}{4} & \multicolumn{1}{l|}{5} & \multicolumn{1}{l|}{6} & \multicolumn{1}{l|}{0} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{2} \\ \cline{2-8} 
+			\multicolumn{1}{l|}{4} & \multicolumn{1}{l|}{4} & \multicolumn{1}{l|}{5} & \multicolumn{1}{l|}{6} & \multicolumn{1}{l|}{0} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{3} \\ \cline{2-8} 
+			\multicolumn{1}{l|}{5} & \multicolumn{1}{l|}{5} & \multicolumn{1}{l|}{6} & \multicolumn{1}{l|}{0} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{3} & \multicolumn{1}{l|}{4} \\ \cline{2-8} 
+			\multicolumn{1}{l|}{6} & \multicolumn{1}{l|}{6} & \multicolumn{1}{l|}{0} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{3} & \multicolumn{1}{l|}{4} & \multicolumn{1}{l|}{5} \\ \cline{2-8} 
+		\end{tabular}
+	\end{table}
+
+	\column{0.5\textwidth}
+		\begin{table}[]
+		\begin{tabular}{llllllll}
+			& 1                      & 2                      & 3                      & 4                      & 5                      & 6                      & 7                      \\ \cline{2-8} 
+			\multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{3} & \multicolumn{1}{l|}{4} & \multicolumn{1}{l|}{5} & \multicolumn{1}{l|}{6} & \multicolumn{1}{l|}{7} \\ \cline{2-8} 
+			\multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{3} & \multicolumn{1}{l|}{4} & \multicolumn{1}{l|}{5} & \multicolumn{1}{l|}{6} & \multicolumn{1}{l|}{7} & \multicolumn{1}{l|}{1} \\ \cline{2-8} 
+			\multicolumn{1}{l|}{3} & \multicolumn{1}{l|}{3} & \multicolumn{1}{l|}{4} & \multicolumn{1}{l|}{5} & \multicolumn{1}{l|}{6} & \multicolumn{1}{l|}{7} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{2} \\ \cline{2-8} 
+			\multicolumn{1}{l|}{4} & \multicolumn{1}{l|}{4} & \multicolumn{1}{l|}{5} & \multicolumn{1}{l|}{6} & \multicolumn{1}{l|}{7} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{3} \\ \cline{2-8} 
+			\multicolumn{1}{l|}{5} & \multicolumn{1}{l|}{5} & \multicolumn{1}{l|}{6} & \multicolumn{1}{l|}{7} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{3} & \multicolumn{1}{l|}{4} \\ \cline{2-8} 
+			\multicolumn{1}{l|}{6} & \multicolumn{1}{l|}{6} & \multicolumn{1}{l|}{7} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{3} & \multicolumn{1}{l|}{4} & \multicolumn{1}{l|}{5} \\ \cline{2-8} 
+			\multicolumn{1}{l|}{7} & \multicolumn{1}{l|}{7} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{3} & \multicolumn{1}{l|}{4} & \multicolumn{1}{l|}{5} & \multicolumn{1}{l|}{6} \\ \cline{2-8} 
+		\end{tabular}
+	\end{table}
+\end{columns}
+
+\begin{enumerate}
+	\item Let $v$ be the order of quasigroup, take $(Z_v,+)$ where $+$ is the addition in $Z_v$.
+	\item For all element $i := i +1$
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Construction method of CI quasigroup of order 7}
+\begin{columns}
+	\column{0.5\textwidth}
+	\begin{table}[]
+		\begin{tabular}{llllllll}
+			& 1                      & 2                      & 3                      & 4                      & 5                      & 6                      & 7                      \\ \cline{2-8} 
+			\multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{3} & \multicolumn{1}{l|}{4} & \multicolumn{1}{l|}{5} & \multicolumn{1}{l|}{6} & \multicolumn{1}{l|}{7} \\ \cline{2-8} 
+			\multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{3} & \multicolumn{1}{l|}{4} & \multicolumn{1}{l|}{5} & \multicolumn{1}{l|}{6} & \multicolumn{1}{l|}{7} & \multicolumn{1}{l|}{1} \\ \cline{2-8} 
+			\multicolumn{1}{l|}{3} & \multicolumn{1}{l|}{3} & \multicolumn{1}{l|}{4} & \multicolumn{1}{l|}{5} & \multicolumn{1}{l|}{6} & \multicolumn{1}{l|}{7} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{2} \\ \cline{2-8} 
+			\multicolumn{1}{l|}{4} & \multicolumn{1}{l|}{4} & \multicolumn{1}{l|}{5} & \multicolumn{1}{l|}{6} & \multicolumn{1}{l|}{7} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{3} \\ \cline{2-8} 
+			\multicolumn{1}{l|}{5} & \multicolumn{1}{l|}{5} & \multicolumn{1}{l|}{6} & \multicolumn{1}{l|}{7} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{3} & \multicolumn{1}{l|}{4} \\ \cline{2-8} 
+			\multicolumn{1}{l|}{6} & \multicolumn{1}{l|}{6} & \multicolumn{1}{l|}{7} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{3} & \multicolumn{1}{l|}{4} & \multicolumn{1}{l|}{5} \\ \cline{2-8} 
+			\multicolumn{1}{l|}{7} & \multicolumn{1}{l|}{7} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{3} & \multicolumn{1}{l|}{4} & \multicolumn{1}{l|}{5} & \multicolumn{1}{l|}{6} \\ \cline{2-8} 
+		\end{tabular}
+	\end{table}
+	\column{0.5\textwidth}
+	$\sigma_v = \{ (1,1), (3,2), (5,3),$ \\
+	$ \quad (7,4), (2,5), (4,6), (6,7) \}$
+\end{columns}
+
+\begin{enumerate}
+	\item Let $v$ be the order of quasigroup, take $(Z_v,+)$ where $+$ is the addition in $Z_v$.
+	\item For all element $i := i +1$
+	\item Take the elements of main diagonal $<d_1,...,d_v>$. Build a permutation $\sigma_v = \{(d_1,1), (d_2,2),..., (d_v,v)\}$.
+	\item Apply $\sigma_v$ for all element of the \textit{multiplication table}
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Construction method of CI quasigroup of order 7}
+\begin{columns}
+	\column{0.5\textwidth}
+	\begin{table}[]
+		\begin{tabular}{llllllll}
+			& 1                      & 2                      & 3                      & 4                      & 5                      & 6                      & 7                      \\ \cline{2-8} 
+			\multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{3} & \multicolumn{1}{l|}{4} & \multicolumn{1}{l|}{5} & \multicolumn{1}{l|}{6} & \multicolumn{1}{l|}{7} \\ \cline{2-8} 
+			\multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{3} & \multicolumn{1}{l|}{4} & \multicolumn{1}{l|}{5} & \multicolumn{1}{l|}{6} & \multicolumn{1}{l|}{7} & \multicolumn{1}{l|}{1} \\ \cline{2-8} 
+			\multicolumn{1}{l|}{3} & \multicolumn{1}{l|}{3} & \multicolumn{1}{l|}{4} & \multicolumn{1}{l|}{5} & \multicolumn{1}{l|}{6} & \multicolumn{1}{l|}{7} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{2} \\ \cline{2-8} 
+			\multicolumn{1}{l|}{4} & \multicolumn{1}{l|}{4} & \multicolumn{1}{l|}{5} & \multicolumn{1}{l|}{6} & \multicolumn{1}{l|}{7} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{3} \\ \cline{2-8} 
+			\multicolumn{1}{l|}{5} & \multicolumn{1}{l|}{5} & \multicolumn{1}{l|}{6} & \multicolumn{1}{l|}{7} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{3} & \multicolumn{1}{l|}{4} \\ \cline{2-8} 
+			\multicolumn{1}{l|}{6} & \multicolumn{1}{l|}{6} & \multicolumn{1}{l|}{7} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{3} & \multicolumn{1}{l|}{4} & \multicolumn{1}{l|}{5} \\ \cline{2-8} 
+			\multicolumn{1}{l|}{7} & \multicolumn{1}{l|}{7} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{3} & \multicolumn{1}{l|}{4} & \multicolumn{1}{l|}{5} & \multicolumn{1}{l|}{6} \\ \cline{2-8} 
+		\end{tabular}
+	\end{table}
+	\column{0.5\textwidth}
+		\begin{table}[]
+		\begin{tabular}{llllllll}
+			& 1                      & 2                      & 3                      & 4                      & 5                      & 6                      & 7                      \\ \cline{2-8} 
+			\multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{5} & \multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{6} & \multicolumn{1}{l|}{3} & \multicolumn{1}{l|}{7} & \multicolumn{1}{l|}{4} \\ \cline{2-8} 
+			\multicolumn{1}{l|}{5} & \multicolumn{1}{l|}{5} & \multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{6} & \multicolumn{1}{l|}{3} & \multicolumn{1}{l|}{7} & \multicolumn{1}{l|}{4} & \multicolumn{1}{l|}{1} \\ \cline{2-8} 
+			\multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{6} & \multicolumn{1}{l|}{3} & \multicolumn{1}{l|}{7} & \multicolumn{1}{l|}{4} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{5} \\ \cline{2-8} 
+			\multicolumn{1}{l|}{6} & \multicolumn{1}{l|}{6} & \multicolumn{1}{l|}{3} & \multicolumn{1}{l|}{7} & \multicolumn{1}{l|}{4} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{5} & \multicolumn{1}{l|}{2} \\ \cline{2-8} 
+			\multicolumn{1}{l|}{3} & \multicolumn{1}{l|}{3} & \multicolumn{1}{l|}{7} & \multicolumn{1}{l|}{4} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{5} & \multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{6} \\ \cline{2-8} 
+			\multicolumn{1}{l|}{7} & \multicolumn{1}{l|}{7} & \multicolumn{1}{l|}{4} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{5} & \multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{6} & \multicolumn{1}{l|}{3} \\ \cline{2-8} 
+			\multicolumn{1}{l|}{4} & \multicolumn{1}{l|}{4} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{5} & \multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{6} & \multicolumn{1}{l|}{3} & \multicolumn{1}{l|}{7} \\ \cline{2-8} 
+		\end{tabular}
+	\end{table}
+\end{columns}
+	We apply $\sigma_v = \{ (1,1), (3,2), (5,3),(7,4), (2,5), (4,6), (6,7) \}$ as result we have a idempotent commutative quasigroup of order $v$.
+\end{frame}
+
+\begin{frame}
+\frametitle{Bose construction($v \equiv 3 mod(6)$)} 
+Let $v = 6n +3$ and let $(Q,\circ)$ be an idempotent commutative quasigroup of order $2n+1$, where $Q = \{1,2,3,...,2n+1\}$. Let $S= Q \times \{1,2,3\}$ and define $T$ to contain the following types of triples.
+\begin{description}
+	\item[Type 1:] For $1 \le i \le 2n +1, \ \{(i,1),(i,2),(i,3)\} \in T$ 
+	\item[Type 2:] For $1 \le i < j \le 2n +1, \ \{ \{ (i,1),(j,1),(i \circ j,2)\},\{ (i,2),(j,2),(i \circ j,3)\}\{ (i,3),(j,3),(i \circ j,1)\}\} \in T$
+\end{description}
+
+Then $(S,T)$ is a Steiner triple system of order $6n + 3$.
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Type of partitions}
+\begin{figure}
+	\includegraphics[width=0.7\textwidth]{bose_1}
+	\caption{Type 1}
+\end{figure}
+\begin{figure}
+	\includegraphics[width=0.7\textwidth]{bose_2}
+	\caption{Type 2}
+\end{figure}
+\end{frame}
+
+
+\begin{comment}
+If we are considering a set of v(v-1)/6 triples of 
+elements of a v-set and know that each pair elements is 
+contained in at least one triple, then each pair must be 
+contained in exactly one triple and we have an STS(v). 
+Therefore we need only count the number of triples and verify 
+that each pair of elements is contained in a triple in order to 
+show that a system is an STS.
+\end{comment}
+\begin{frame}
+\frametitle{Proof}
+%we need to prove that all pairs are v(v-1)/6 then, as result of all pair is contained only one, we have proved the corecteness.
+$|T|$ is made up with 2 type:
+\begin{itemize}
+	\item \textit{Type 1}: $2n+1$ triples
+	\item \textit{Type 2}: $\binom{2n + 1}{2}$ choices for $i$ and $j$, for all of them there are 3 another type.
+\end{itemize} 
+Then $|T| = (2n+1) + 3\frac{(2n+1)2n}{2} = \frac{(2n+1)(6n+2)}{2} = v(v-1)/6$ have the right number of triple.\\%I've used 
+
+To show that every pairs is contained in at least 1 triple, think about 2 possible pair of point $(a,b),(c,d) \in Q^2$:%e' distorta la notazione di punto in quanto dobbiamo pensare alla coppia di punti come una coppia di coppia di punti (siamo nella costruzione di Bose)
+\begin{itemize}
+	\item if $a=c$ (so $b=d$ impossible) is contained in type 1 $\{\{(a,1),(a,2),(a,3)\}, \{(a,),(),()\}  \}$
+\end{itemize}
+\end{frame}
