@@ -349,8 +349,10 @@ A latin square (multiplication table of quasigroup of the same order) $L$ of ord
 			\hline
 		\end{tabular}
 	\end{table}
-	\column[]{0.5\textwidth}
-	latin square of order $4$ ($n=2$)
+	\column[]{0.4\textwidth}
+	Half-idempotent latin square of order $4$ ($n=2$)
+	
+	\column[]{0.1\textwidth}
 \end{columns}
 
 \pause
@@ -411,6 +413,7 @@ A latin square (multiplication table of quasigroup of the same order) $L$ of ord
 \frametitle{How costruct H-I latin square/quasigroup}
 
 \begin{columns}
+	\pause[1]
 	\column[]{0.5\textwidth}
 	\begin{table}
 		\centering
@@ -431,6 +434,8 @@ A latin square (multiplication table of quasigroup of the same order) $L$ of ord
 		\end{tabular}
 	\caption{Quasigroup $(\mathrm{Z}_6, + mod(6))$}
 	\end{table}
+
+	\pause[3]
 	\column[]{0.5\textwidth}
 	\begin{table}
 		\centering
@@ -455,6 +460,7 @@ A latin square (multiplication table of quasigroup of the same order) $L$ of ord
 	
 \end{columns}
 
+\pause[2]
 The bijection $\sigma$ is built increasing all value by $1$(or by taking the next element). Then by taking the main diagonal from the left grid ($<1,3,5,...>$) and assign the right number ($<1,2,3,...>$) 
 \end{frame}
 
@@ -471,12 +477,9 @@ Let $v = 6n +1$ and let $(Q, \circ)$ be a half-idempotent commutative quasigroup
 \end{description}
 \end{frame}
 
-\begin{frame}
-
-\end{frame}
 
 \begin{frame}
-We have to prove (in a similar way) there are the right number of $t \in T$ and every pair (from $\binom{6n + 1}{2}$) is contained almost 1.
+We have to prove (in a similar way of Bose) there are the right number of $t \in T$ and every pair (from $\binom{6n + 1}{2}$) is contained almost 1.
 \begin{proof}[1: Right number of $|T|$]
 We sum up 3 different element:
 \begin{itemize}
