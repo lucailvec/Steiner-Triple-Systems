@@ -315,31 +315,13 @@ To show that every pairs is contained in at least 1 triple, think about 2 possib
 $\forall (a,b),(c,d) \in Q \times \{1,2,3\}$
 \begin{itemize}
 	\item $a=c \wedge b=d$ impossible
-	\item if $a=c$ (so $b\not = d$) is contained in at least 1 triple of \textit{type 1} $\{\{(a,1),(a,2),(a,3)\}, \{(x,1),(a,1),(b,2)\}, ... \}$
-	\item if $b=d \wedge a \not = c$ impossible) is contained in at least 1 triple of \textit{type 2} $\{\{(a,b),(c,b),(a \circ c, b+1 mod(3)\ )\}, \{(x,1),(a,1),(b,2)\}, ... \}$
+	\item if $a=c$ (so $b\not = d$) is contained in at least 1 triple of \textit{type 1} $\{(a,1),(a,2),(a,3)\}$
+	\item if $b=d \wedge a \not = c$ is contained in at least 1 triple of \textit{type 2} $\{\{(a,b),(c,b),(a \circ c, b+1 mod(3)\ )\}, \{(x,1),(a,1),(b,2)\}, ... \}$
 	\item $a \not = c \wedge b \not = d$.%assume for example. The other can be produced by iteration on the 6 pair from the 3 possible partition 
 	Assume $b=1$ and $d=2$. Since $(Q,\circ)$ is a quasigroup $a \circ i = c$ and $j \circ a = c$ for some $i,j$. Because the \textit{commutative} $i=j$ and because \textit{idempotent} only $a \circ a=a$, all the others we are sure that $i\not = a$. So $\{(a,1),(i,1),(a \circ i = c, 2)\}$.
 \end{itemize}
 
 All possible point have been shown that are in $T$.
-\end{frame}
-
-\begin{frame}
-\frametitle{Example Bose construction}
-\begin{figure}
-	\includegraphics[height=0.2\textheight]{skolem_1}
-	\begin{columns}
-		\column[]{0.2\textwidth}
-		\includegraphics[height=0.2\textheight]{skolem_2_a}
-		\column[]{0.1\textwidth}
-		\column[]{0.2\textwidth}
-		\includegraphics[height=0.2\textheight]{skolem_2_b}
-		\column[]{0.1\textwidth}
-		\column[]{0.2\textwidth}
-		\includegraphics[height=0.2\textheight]{skolem_2_c}
-	\end{columns}
-	\includegraphics[height=0.2\textheight]{skolem_3}
-\end{figure}
 \end{frame}
 
 \begin{frame}
@@ -500,11 +482,31 @@ Let $v = 6n +1$ and let $(Q, \circ)$ be a half-idempotent commutative quasigroup
 \end{description}
 \end{frame}
 
+\begin{frame}
+\frametitle{Example Skolem construction}
+\begin{figure}
+	\includegraphics[height=0.2\textheight]{skolem_1}
+	\begin{columns}
+		\column[]{0.2\textwidth}
+		\includegraphics[height=0.2\textheight]{skolem_2_a}
+		\column[]{0.1\textwidth}
+		\column[]{0.2\textwidth}
+		\includegraphics[height=0.2\textheight]{skolem_2_b}
+		\column[]{0.1\textwidth}
+		\column[]{0.2\textwidth}
+		\includegraphics[height=0.2\textheight]{skolem_2_c}
+	\end{columns}
+	\includegraphics[height=0.2\textheight]{skolem_3}
+\end{figure}
+\end{frame}
+
 
 \begin{frame}
+\frametitle{Proof}
 We have to prove (in a similar way of Bose) there are the right number of $t \in T$ and every pair (from $\binom{6n + 1}{2}$) is contained almost 1.
 \begin{proof}[1: Right number of $|T|$]
 We sum up 3 different element:
+\small
 \begin{itemize}
 	\item \textit{type 1}: \textcolor{black!55}{for $1 \le i \le n$, $\{ (i,1), (i,2), (i,3)\} \in T$} are $n$
 	\item \textit{type 2}: \textcolor{black!55}{ for $1 \le i \le n$ , $\{\infty, (n+i,3),(i,2)\},\{\infty,(n+i,2),(n+i,3)\},\{\infty,(n+i,3),(i,1) \} \in T$} are $3n$
