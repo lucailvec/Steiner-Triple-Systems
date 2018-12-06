@@ -38,7 +38,7 @@ Two designs $(X,\mathrm{A})$ and $(Y,\mathrm{B})$ where $|X|=|Y|$ are \textit{is
 	\end{math}%In other words, if we rename every point x ∈ X by α(x), then the collection of blocks
 	% is transformed into B. The bijection α is called an isomorphism.
 
-\end{center}
+\end{center}	
 Then $\alpha$ is called isomorphism.
 \end{block}
 \begin{figure}
@@ -48,15 +48,52 @@ Then $\alpha$ is called isomorphism.
 
 %due sts non-isomorfi quindi sono sts che hanno lo stesso ordine ma che una funzione biunivoca non riesce a mappare, effettivamente sono diversi quindi.
 \begin{frame}
-\frametitle{Beyond Existence or non-existence}
+	\frametitle{Beyond Existence or non-existence}
+	
+	\setbeamercolor{block title}{bg=red!30,fg=black}
+	\begin{block}{}
+		The existence of non-isomorphic STS is complex and a open field.
+	\end{block}
 
+\begin{columns}
+\column[]{0.5\textwidth}
+\begin{table}[]
+\begin{tabular}{cccll}
+\cline{1-2}
+\multicolumn{1}{|c|}{} & \multicolumn{1}{c|}{$t_1$}  &  &  \\ \cline{1-2}
+\multicolumn{1}{|c|}{1} & \multicolumn{1}{c|}{1}  &  &  \\ \cline{1-2}
+\multicolumn{1}{|c|}{2} & \multicolumn{1}{c|}{1}  &  &  \\ \cline{1-2}
+\multicolumn{1}{|c|}{3} & \multicolumn{1}{c|}{1}   &  \\ \cline{1-2}
+\multicolumn{1}{l}{}    & \multicolumn{1}{l}{}      &  & 
+\end{tabular}
+\caption{Incidence matrix of STS(3)}
+\end{table}	
+\column[]{0.5\textwidth}
+\begin{block}{Incidence matrix}
+Fixed a design $(S,T) \equiv (\{s_1, ..., s_{|S|} \},\{t_1, ..., t_{|T|} \})$ let all elements $m_{i,j}$ of \textit{incidence matrix} of a design $(S,T)$ be:
+
+\begin{math}
+m_{i,j} = 
+\begin{cases*}
+1 & if $s_i \in t_j$\\
+0 & if $s_i \not \in t_j$
+\end{cases*}
+\end{math}
+
+\end{block}
+\end{columns}
+
+
+\end{frame}
+
+\begin{frame}
 \setbeamercolor{block title}{bg=red!30,fg=black}
-
 \pause[1]
 \begin{block}{}
 The existence of non-isomorphic STS is complex and a open field.
 \end{block}
 
+%faccio un esempio -> quanti sono ? -> primo non-isomoprhic -> stima di Wilson 1974 -> stima di Stinson 1985
 
 \setbeamercolor{block title}{bg=blue!30,fg=black}
 \pause[2]
@@ -66,4 +103,9 @@ The existence of non-isomorphic STS is complex and a open field.
 \begin{block}{(A051390)Number of nonisomorphic Steiner quadruple systems (SQS's) of order $n$ }
 	$<1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 4, 0, 1054163>$%16
 \end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{[1974 Wilson]Upper bound to non-isomorphic STS(v)}
+
 \end{frame}
