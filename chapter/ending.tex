@@ -34,7 +34,7 @@
 Two designs $(X,\mathrm{A})$ and $(Y,\mathrm{B})$ where $|X|=|Y|$ are \textit{isomorphic} if there \textit{exists} a bijection $\alpha : X \rightarrow Y$ such that:
 \begin{center}
 	\begin{math}
-	[ \{ \alpha(x) : x \in A \}: A \mathrm{A} ] = \mathrm{B}
+	\{ \alpha(x) : x \in A \} = \mathrm{B}
 	\end{math}%In other words, if we rename every point x ∈ X by α(x), then the collection of blocks
 	% is transformed into B. The bijection α is called an isomorphism.
 
@@ -50,11 +50,6 @@ Then $\alpha$ is called isomorphism.
 \begin{frame}
 	\frametitle{Beyond Existence or non-existence}
 	
-	\setbeamercolor{block title}{bg=red!30,fg=black}
-	\begin{block}{}
-		The existence of non-isomorphic STS is complex and a open field.
-	\end{block}
-
 \begin{columns}
 \column[]{0.5\textwidth}
 \begin{table}[]
@@ -87,10 +82,46 @@ m_{i,j} =
 \end{frame}
 
 \begin{frame}
+\frametitle{2-isomorphic sts(7)}
+$v=7$,\quad $k=\binom{7}{2}/3$
+
+\begin{columns}
+	\column[]{0.5\textwidth}
+	\begin{table}
+		\begin{tabular}{|l|l|l|l|c|c|c|}
+			\hline
+			1 & 2 & ~ & 4 & ~ & ~ & ~ \\ \hline
+			~ & 2 & 3 & ~ & 5 & ~ & ~ \\ \hline
+			~ & ~ & 3 & 4 & ~ & 6 & ~ \\ \hline
+			~ & ~ & ~ & 4 & 5 & ~ & 7 \\ \hline
+			1 & ~ & ~ & ~ & 5 & 6 & ~ \\ \hline
+			~ & 2 & ~ & ~ & ~ & 6 & 7 \\ \hline
+			1 & ~ & 3 & ~ & ~ & ~ & 7 \\ \hline
+		\end{tabular}
+	\end{table}
+
+	\column[]{0.5\textwidth}
+	\begin{table}[]
+		\begin{tabular}{|c|c|c|c|c|c|c|}
+			\hline
+			&   &   &   & 5 & 6 & 7 \\ \hline
+			&   & 3 & 4 &   &   & 7 \\ \hline
+			1 & 2 &   &   &   &   & 7 \\ \hline
+			& 2 &   & 4 &   & 6 &   \\ \hline
+			1 &   & 3 &   &   & 6 &   \\ \hline
+			& 2 & 3 &   & 5 &   &   \\ \hline
+			1 &   &   & 4 & 5 &   &   \\ \hline
+		\end{tabular}
+	\end{table}
+\end{columns}
+\end{frame}
+
+
+\begin{frame}
 \setbeamercolor{block title}{bg=red!30,fg=black}
 \pause[1]
 \begin{block}{}
-The existence of non-isomorphic STS is complex and a open field.
+The enumeration of non-isomorphic STS is complex and a open field.
 \end{block}
 
 %faccio un esempio -> quanti sono ? -> primo non-isomoprhic -> stima di Wilson 1974 -> stima di Stinson 1985
@@ -107,5 +138,19 @@ The existence of non-isomorphic STS is complex and a open field.
 
 \begin{frame}
 \frametitle{[1974 Wilson]Upper bound to non-isomorphic STS(v)}
+A algebric result:
+\begin{center}
+	\begin{math}
+		F(v) \le ((1 + o (1)\frac{v}{e^2})^{\frac{n^2}{6}}
+	\end{math}
+\end{center}
+\end{frame}
 
+
+\begin{frame}
+\frametitle{[1985 Stinson]Estimation of STS(19)}
+Was discovered 284457 non-isomorphic through different methods.
+They had discovered $N(19) \ge 2395687$  through a \textit{non-deterministic hill-climbing algorithm}. Then for every STS(19) calculate 2 \textit{invariants} (non-isomorphic give the property of different invariant.) First they conclude $N=3.54 \times 10^8$, but the random seed was from a population of $10^9$($11084874829$) and some 2 isomorphic STS may have the same invariants.\\
+
+They made another estimation by knowing the \textit{right number} of $sub-STS(9)$ the $N(19)$ by looking the ratio of of $sub-STS(9)$ fount divided by the right times the number of nonisomorphic sts. So... they \textcolor{red}{miss by an order of magnitude} but really close!.
 \end{frame}

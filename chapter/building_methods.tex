@@ -8,13 +8,11 @@
 	\frametitle{How to create}
 	\begin{itemize}
 		\item Bose method
-		\item Skolem
+		\item Skolem method
 		\item $6n + 5$
 		\item With quasigroups with holes
 		\item Wilson
-		\item $2n +1$
-		\item $2n +7$
-		\item Even-Odd
+		\item and so many
 	\end{itemize}
 \end{frame}
 
@@ -274,13 +272,16 @@ Then $(S,T)$ is a Steiner triple system of order $6n + 3$.
 
 \end{frame}
 
+%POSSIAMO vedere il tipo i punti su 2D.
 \begin{frame}
 \frametitle{Type of partitions}
 \begin{figure}
+	%nel tipo 1 ho solo i verticali
 	\includegraphics[width=0.7\textwidth]{bose_1}
 	\caption{Type 1}
 \end{figure}
 \begin{figure}
+	%ho solo gli orizzontali e per ogni possibile combinazione di layer devo avere i crescenti e discendenti per ogni coppia
 	\includegraphics[width=0.7\textwidth]{bose_2}
 	\caption{Type 2}
 \end{figure}
@@ -297,17 +298,18 @@ that each pair of elements is contained in a triple in order to
 show that a system is an STS.
 \end{comment}
 \begin{frame}
-\frametitle{Proof}
-%we need to prove that all pairs are v(v-1)/6 then, as result of all pair is contained only one, we have proved the corecteness.
-$|T|$ is made up with 2 type:
-\begin{itemize}
+We need to prove that all pairs are v(v-1)/6 then, as result of all pair is contained only one, we have proved the corecteness.
+
+\begin{block}{Proof right number}
+$|T|$ is made up with 2 type:\begin{itemize}
 	\item \textit{Type 1}: $2n+1$ triples
 	\item \textit{Type 2}: $\binom{2n + 1}{2}$ choices for $i$ and $j$, for all of them there are 3 another type.
 \end{itemize} 
 Then $|T| = (2n+1) + 3\frac{(2n+1)2n}{2} = \frac{(2n+1)(6n+2)}{2} = v(v-1)/6$ have the right number of triple.\\%I've used 
 
 To show that every pairs is contained in at least 1 triple, think about 2 possible pair of point $(a,b),(c,d) \in Q \times \{1,2,3\}$:
-\end{frame}
+
+\end{block}\end{frame}
 
 \begin{frame}
 \frametitle{Cont..}
@@ -331,6 +333,8 @@ Let $v = 6n +1$ and let $(Q, \circ)$ be a half-idempotent commutative quasigroup
 
 
 
+
+%la sottomatrice 0x0 a nxn è uguale a quella nxn a 2nx2n 
 \begin{frame}
 \frametitle{Half-idempotent commutative latin square}
 
@@ -475,9 +479,10 @@ The bijection $\sigma$ is built increasing all value by $1$(or by taking the nex
 \frametitle{Example Skolem construction}
 Let $v = 6n +1$ and let $(Q, \circ)$ be a half-idempotent commutative quasigroup of order $2n$, where $Q = \{ 1,2,3,...., 2n\}$. Let $S = \{\infty\} \cup(Q \times \{1,2,3\})$. We define $T$ as follow:
 
+%il tipo 2 garantisce e utilizza la proprietà che quando sono minore o uguale a n e mi sommo n ottengo un valore a destra e quindi per forza diverso.
 \begin{description}
 	\item[Type 1]: for $1 \le i \le n$, $\{ (i,1), (i,2), (i,3) \} \in T$ 
-	\item[Type 2]: for $1 \le i \le n$ , $\{ \infty, (n+i,3),(i,2) \},\{ \infty, (n+i,2),(n+i,3) \},\{\infty,(n+i,3),(i,1) \} \in T$
+	\item[Type 2]: for $1 \le i \le n$ , $\{ \infty, (n+i,1),(i,2) \},\{ \infty, (n+i,2),(n+i,3) \},\{\infty,(n+i,3),(i,1) \} \in T$
 	\item[Type 3]: for $1 \le i < j \le 2n$,$\{(i,1),(j,1),(i \circ j,2) \}, \{(i,2),(j,2),(i \circ j,3)\},\{\} \in T$
 \end{description}
 \end{frame}
