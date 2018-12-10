@@ -137,7 +137,6 @@ A quasigroup $(G,\circ)$ is a latin square of order $v=|G|$:
 \end{frame}
 
 \begin{frame}
-\frametitle{contenuto...}
 \begin{theorem}%l'idea è quella di non poter scaricare il carico in modo simmetrico o di rispettare la prop principale del latin square
 	idempotent commutative quasigroups exist \textbf{if and only if} they have \textit{odd} order.
 \end{theorem}
@@ -248,12 +247,12 @@ As result you have a CI quasigroup.
 		\begin{tabular}{cccccccc}
 			& 1                      & 2                      & 3                      & 4                      & 5                      & 6                      & 7                      \\ \cline{2-8} 
 			\multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{5} & \multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{6} & \multicolumn{1}{l|}{3} & \multicolumn{1}{l|}{7} & \multicolumn{1}{l|}{4} \\ \cline{2-8} 
-			\multicolumn{1}{l|}{5} & \multicolumn{1}{l|}{5} & \multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{6} & \multicolumn{1}{l|}{3} & \multicolumn{1}{l|}{7} & \multicolumn{1}{l|}{4} & \multicolumn{1}{l|}{1} \\ \cline{2-8} 
-			\multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{6} & \multicolumn{1}{l|}{3} & \multicolumn{1}{l|}{7} & \multicolumn{1}{l|}{4} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{5} \\ \cline{2-8} 
-			\multicolumn{1}{l|}{6} & \multicolumn{1}{l|}{6} & \multicolumn{1}{l|}{3} & \multicolumn{1}{l|}{7} & \multicolumn{1}{l|}{4} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{5} & \multicolumn{1}{l|}{2} \\ \cline{2-8} 
-			\multicolumn{1}{l|}{3} & \multicolumn{1}{l|}{3} & \multicolumn{1}{l|}{7} & \multicolumn{1}{l|}{4} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{5} & \multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{6} \\ \cline{2-8} 
-			\multicolumn{1}{l|}{7} & \multicolumn{1}{l|}{7} & \multicolumn{1}{l|}{4} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{5} & \multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{6} & \multicolumn{1}{l|}{3} \\ \cline{2-8} 
-			\multicolumn{1}{l|}{4} & \multicolumn{1}{l|}{4} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{5} & \multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{6} & \multicolumn{1}{l|}{3} & \multicolumn{1}{l|}{7} \\ \cline{2-8} 
+			\multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{5} & \multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{6} & \multicolumn{1}{l|}{3} & \multicolumn{1}{l|}{7} & \multicolumn{1}{l|}{4} & \multicolumn{1}{l|}{1} \\ \cline{2-8} 
+			\multicolumn{1}{l|}{3} & \multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{6} & \multicolumn{1}{l|}{3} & \multicolumn{1}{l|}{7} & \multicolumn{1}{l|}{4} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{5} \\ \cline{2-8} 
+			\multicolumn{1}{l|}{4} & \multicolumn{1}{l|}{6} & \multicolumn{1}{l|}{3} & \multicolumn{1}{l|}{7} & \multicolumn{1}{l|}{4} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{5} & \multicolumn{1}{l|}{2} \\ \cline{2-8} 
+			\multicolumn{1}{l|}{5} & \multicolumn{1}{l|}{3} & \multicolumn{1}{l|}{7} & \multicolumn{1}{l|}{4} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{5} & \multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{6} \\ \cline{2-8} 
+			\multicolumn{1}{l|}{6} & \multicolumn{1}{l|}{7} & \multicolumn{1}{l|}{4} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{5} & \multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{6} & \multicolumn{1}{l|}{3} \\ \cline{2-8} 
+			\multicolumn{1}{l|}{7} & \multicolumn{1}{l|}{4} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{5} & \multicolumn{1}{l|}{2} & \multicolumn{1}{l|}{6} & \multicolumn{1}{l|}{3} & \multicolumn{1}{l|}{7} \\ \cline{2-8} 
 		\end{tabular}
 	\end{table}
 \end{columns}
@@ -483,8 +482,10 @@ Let $v = 6n +1$ and let $(Q, \circ)$ be a half-idempotent commutative quasigroup
 \begin{description}
 	\item[Type 1]: for $1 \le i \le n$, $\{ (i,1), (i,2), (i,3) \} \in T$ 
 	\item[Type 2]: for $1 \le i \le n$ , $\{ \infty, (n+i,1),(i,2) \},\{ \infty, (n+i,2),(n+i,3) \},\{\infty,(n+i,3),(i,1) \} \in T$
-	\item[Type 3]: for $1 \le i < j \le 2n$,$\{(i,1),(j,1),(i \circ j,2) \}, \{(i,2),(j,2),(i \circ j,3)\},\{\} \in T$
+	\item[Type 3]: for $1 \le i < j \le 2n$,$\{(i,1),(j,1),(i \circ j,2) \}, \{(i,2),(j,2),(i \circ j,3)\},\{(i,3),(j,3),(i\circ j,1)\} \in T$
 \end{description}
+
+Then $(S,T)$ is STS($6n+1$). 
 \end{frame}
 
 \begin{frame}
